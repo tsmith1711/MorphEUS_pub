@@ -1,0 +1,14 @@
+legacy/R/.Rhistory
+*.csv
+*.m~
+*.xlsx
+*.asv
+*.fig
+classification_and_analysis/trial_results/*
+classification_and_analysis/logs/*
+version_info.md
+
+\.DS_Store
+.DS_Store
+
+*.eps

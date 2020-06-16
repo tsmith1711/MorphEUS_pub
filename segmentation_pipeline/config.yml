@@ -1,0 +1,44 @@
+#YAML:1.0
+# ^ do not change YAML version
+################################################
+# MICROBEJ SEGMENTATION CONFIGURATION SETTINGS #
+################################################
+# Contains all the configuration needed for running bcp_MicrobeJ_processing.m
+# Save this file as config.yml and place in the root directory of the program
+
+metadata:
+  version: 1.6
+  description: "Default run configuration" #THIS FILE IS A DEFAULT TEMPLATE INTENDED REFERNCE.
+
+#Which columns from the bacteria table to use for the analysis
+bacteria_cols: ['FEATURE_1_count','FEATURE_2_count','SHAPE_area','SHAPE_aspectRatio','SHAPE_circularity', 'SHAPE_length','SHAPE_perimeter','SHAPE_solidity','SHAPE_width']
+#Which columns from the fluorescence table to use for the analysis
+fluorescence_cols: ['INTENSITY','SHAPE_area','SHAPE_aspectRatio','SHAPE_circularity','SHAPE_length','SHAPE_perimeter','SHAPE_solidity','SHAPE_width']
+#Which columns to remove at end (related to features, typically)
+removed_cols: ['FEATURE_1_count_q1','FEATURE_1_count_q3','FEATURE_1_count_v','FEATURE_2_count_q1','FEATURE_2_count_q3','FEATURE_2_count_v']
+#Feature or maxima
+f_or_m: 'FEATURE'
+
+
+blur_thresholds:
+  sw_p_val_limit: 0.008 # Match to gaussian--under 0.01 bad, -1 if unable to calculate
+  maxima_limit: 1      # how many 'blips' are in the profile --- 1-2 is OK, 0 is ideal, -1 if unable to calculate
+  min_mid_diff_max: 2   # how skewed the profile is --- 2 is accceptable, 0 ideal
+  range_diff_max: 500   # difference between the ranges of the left and right side of profile -- 150 is acceptable
+  range_min: 100        # range of profile--maximize
+  slope_diff_max: 500  # difference in slope of each side
+  slope_min: 100        # average of slopes of each side-->blur threshold (IMPORTANT)
+
+  #CHOOSE which attributes to filter by: set to string separated by && (will be calculated by eval())
+  #OPTIONS: sw_p_val_match, maxima_match, range_match, range_diff_match, slope_match, min_mid_match, slope_diff_max
+  #   or set to 'true' for NO blur filtering
+  attributes_to_check: 'sw_p_val_match && maxima_match && range_match && range_diff_match && slope_match && min_mid_match'
+
+#How many photos will be merged per point on the graph
+group_size: 1
+
+#Which outputs are to be generated
+output:
+  show_correlation_plot: false
+  save: true
+  
