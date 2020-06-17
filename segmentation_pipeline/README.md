@@ -6,7 +6,9 @@ Image segmentation process with data from MicrobeJ.
 
 ### How to run
 
-Create a folder with a name that is meaningful to the data contained.  Inside this folder, create a folder called 'data', where you will place your csvs named with the following naming scheme:
+This script is run after using MocrbeJ to segment a 3 channel image (one brightfield, two flourescent) and exporting their output as csv files. The process of using MicrobeJ to segment an image is more closely detailed in the documentation linked above.
+
+Once you have your results from segmentation, create a folder with a name that is meaningful to the data contained.  Inside this folder, create a folder called 'data', where you will place your csvs named with the following naming scheme:
 
 all_bacteria.csv 
 all_feature1.csv
