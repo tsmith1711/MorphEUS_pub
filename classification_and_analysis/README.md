@@ -14,13 +14,13 @@ In order to run a classification trial, you need to download Hanchuan Peng's mRM
 
 ### Workspaces for current presets
 
-Joint profile: full_025x_and_3x_redos_no_A22.mat
+Joint profile: joint_workspace.mat
 
 Timecourse applying: all_timecourse_doseresponse.mat
 
-High dose: full_3x_with_redos_no_A22_drug_name_only.mat
+High dose: high_dose_workspace.mat
 
-Low dose: full_025x_with_redos_v3_drug_names_only.mat
+Low dose: low_dose_workspace.mat
 
 Condition data: all_condition_dat_with_unt.mat
 

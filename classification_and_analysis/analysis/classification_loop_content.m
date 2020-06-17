@@ -34,7 +34,7 @@ numvar = num_rows-1;
 if do_joint_profile
     % same here for flattened and non flattened table -- at this point,
     % just puts the 3x and 025x in the same table
-    new_52drug_joint
+    new_34drug_joint
     
     %% prompt user selection of drugs
     % now that I've moved this around, could combine better with the
