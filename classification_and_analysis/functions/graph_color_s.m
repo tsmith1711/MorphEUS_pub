@@ -1,8 +1,6 @@
 function  graph_color_s(fig)
-%less loopy than before, this bad boy ensures everything is exactly the
-% same every time 
-% jk ended up being p loopy 
-% color_maker and graph_helper2 needed to run this
+% used to color graph using the same color scheme each time
+% apply to existing figure handle 
 
     %now to the scatter plot colors
     ca = get(fig,'CurrentAxes');
@@ -33,30 +31,25 @@ function  graph_color_s(fig)
     % sort drug by MoA
     RNAP = ["RifT","RIF","RNAP"];
     efflux = ["efflux","Ver","Thi"];
-    lipid = ["PZA","CCCP","Gra","Mon","Nig","Nis","Sulf","BDQ","Clz","Cerold"];
-    lipid_2 = ["Tri"];
+    lipid = ["PZA","CCCP","Gra","Mon","Nig","Nis","BDQ","Clz"];
     protein = ["Kan","Amk","Cam","AZT","Cla","Dox","Gent","Strep","Tet","Tig","Lin","protein"];
-    dna = ["Dau","Nal","Lev","Mox","MIT","Olf","dna","MOX","Olfold","Nit"];
-    cell_wall = ["Mer","Amp","Amox","Ctax","Clex","INH","ETA","IMI","Pip","Cfox", ...
-        "Mec","Oxa","PenG","Van","Pre","Cyc","A22","Carb","Del","EMB","cell_wall","Cer","THL"];
+    dna = ["Lev","Mox","MIT","Olf","dna","MOX"];
+    cell_wall = ["Mer","Amp","Ctax","INH","ETA","IMI", ...
+        "Van","Pre","Cyc","Del","EMB","cell_wall","Cer","THL"];
     controls = ["MeOH","EtOH","NaOH","water","DMSO","Untreated","control"];
-    unknowns = ["Unknown2019", "Unknown2239", "Unknown2911","Unknown3285","Unknown4050"];
+    unknowns = ["Unknown2019", "Unknown2239","Unknown3285"];
     extras = ["INH_control","INH_control_3x"];
-
-    stonybrooks = ["high_692","high_701","high_702","low_691","low_692","low_701","low_702"];
     
     %Set up arrays of similar colors for different MoA
     RNAPcol = color_maker(RNAP, [255 255 0], [0 0 50]);
     effluxcol = color_maker(efflux,[100 19 38],[0 50 50]);
     lipidcol = color_maker(lipid,[0 83 166],[8 13 35]);
-    lipid_2col = color_maker(lipid_2,[0, 211, 211],[100 10 5]);
     proteincol = color_maker(protein,[55 92 0],[10 20 4]);
     dnacol = color_maker(dna,[255 234 196],[0,-38,-62]);
     cell_wallcol = color_maker(cell_wall,[52 0 109],[9 8 14]);
     controlscol = color_maker(controls,[33 33 33],[25 25 25]);
     unknownscol = color_maker(unknowns,[150 20 170],[20 40 -20]);
     extrascol = color_maker(extras,[255 255 255],[0 -15 -50]);
-    stonybrookscol = color_maker(stonybrooks,[240 120 21], [-28 20 32]);
 
     %failsafe if a drug shows up that is not listed
     nogroup = 0;
@@ -110,10 +103,6 @@ function  graph_color_s(fig)
             ind = find(strcmpi(lipid,name));
             graph_helper(scat(row,1), lipidcol,ind,markers)
             
-        elseif ismember(name, lipid_2)
-            ind = find(strcmp(lipid_2,name));
-            graph_helper(scat(row,1), lipid_2col,ind,markers)
-            
         elseif ismember(name, protein)
             ind = find(strcmpi(protein,name));
             graph_helper(scat(row,1), proteincol,ind,markers)
@@ -126,10 +115,6 @@ function  graph_color_s(fig)
             ind = find(strcmpi(cell_wall,name));
             graph_helper(scat(row,1), cell_wallcol,ind,markers)
             
-        elseif ismember(name,stonybrooks)
-            ind = find(strcmpi(stonybrooks,name));
-            graph_helper(scat(row,1), stonybrookscol,ind,markers)
-
         elseif ismember(name, controls)
             ind = find(strcmpi(controls,name));
             graph_helper(scat(row,1), controlscol,ind,markers)

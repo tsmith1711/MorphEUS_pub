@@ -25,7 +25,6 @@ if ~exist('bayesian','var')
    bayesian = false; 
 end
 
-% apply on 24hour timepoint workspace
 apply_timepoint_drugs = false; %ALSO MUST COMMENT OUT CLUSTERGRAM SECTION OF PCA_analysis (idk lol it was throwing an error)
 
 do_joint_profile = true;
@@ -127,9 +126,6 @@ end
 
 
 %% Cool table fixes
-% Eventually, you'll probably want to do all these and save them in the
-% workspace
-
 % Set DRUG to drug_dose
 final_data_table_3x.DRUG = strcat(final_data_table_3x.ID, '_3x');
 
@@ -168,7 +164,7 @@ end
 final_data_table = [final_data_table_025x; final_data_table_3x];
 
 % Set the EXP to the same thing so the joint profile allows them to canoodle
-final_data_table.EXP(:) = {'drug52_doseResponse'};
+final_data_table.EXP(:) = {'drug34_doseResponse'};
 %% Strike fear into the eyes of the enemy and only allow those we chose to survive
 
 %Extract only the ids that the two doses have in common

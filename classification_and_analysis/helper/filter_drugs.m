@@ -11,7 +11,7 @@
 %%%
 %%% OUTPUT: final_data_table, with the chosen drugs removed
 %%%         apply , whether there are drugs to apply
-%%%         drug_to_apply, a subsection of the final_data_table only for the drug to apply (correct?)
+%%%         drug_to_apply, a subsection of the final_data_table only for the drug to apply 
 %%%         choice_indexes
 %%%         chosen chosen_drugs
 %%%         
@@ -68,7 +68,7 @@ chosen = chosen_drugs;
 
 %%
 % want to make them keep untreated, put in a boolean to get rid of it later
-% after TVN maybe?
+% after TVN 
 % force user to select untreated
 if ~any(contains(chosen,'Untreated'))
     chosen = [chosen {'Untreated'}];

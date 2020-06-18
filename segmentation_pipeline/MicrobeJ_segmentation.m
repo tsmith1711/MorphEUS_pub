@@ -1187,10 +1187,7 @@ if FM_tf
     end 
 end 
 
-%% Getting rid of outliers -- still working on best way to do this 
-% some outliers are egregious (ie 15 orders of magnitude too large) but
-% don't want to accidentally destroy something biologically significant
-% also don't have normal distributions -- quite a few lognormal-apparent
+%% Getting rid of outliers 
 
 bad_bac_out = [];
 bad_FM_out = [];
@@ -2245,7 +2242,7 @@ for i = drugs
         stop_point = length(joined_bacteria_groups.(drug));
     end 
 
-    % for following seciton, we used grouped_no_nan for cell workspace and
+    % for following section, we used grouped_no_nan for cell workspace and
     % we use joined for img workspace. Boolean cell_mode is used to get from
     % one to the other. 
     for j = 1:stop_point    
@@ -2439,26 +2436,6 @@ end
 
 clear num_bacteria_rows num_FM_rows num_syto_rows numeric_avg_bacteria_cols numeric_avg_FM_cols numeric_avg_syto_cols drug_label
 clear new_row bact_row FM_row syto_row
-
-%~~~~~edit ends
-%% *not implemented* Adds ratio of fluorescence area and cell area as another varaible in bacteria file
-%%%%Should be calculated on cell by cell basis, but this works for now
-%{
-for i = drugs
-    drug = i{1};
-    table = all_data.(drug);
-    
-    syto_area_percentage = [];
-    FM_area_percentage = [];
-    
-    for j = 1:size(table,1)
-        syto_area_percentage(j) = table{j, 'SHAPE_area'}/table{j, 's_SHAPE_area'};
-        FM_area_percentage(j) = table{j, 'SHAPE_area'}/table{j, 'f_SHAPE_area'};
-    end
-    
-    %all_data.(drug).syto_area_percentage = 
-end
-%}
 
 %% Merge all tables into big final table
 

@@ -1,8 +1,6 @@
 function drug_moas = change_to_moa(drugList,all_categories)
 % INPUT list of drugs 
 % will read them in and change them to their MoA
-% is this like assign MoA? probably
-% let me live my life
 % all_categories is a struct where ,for example, all_categories.protein has
 % an array of all of the different protein drugs
 

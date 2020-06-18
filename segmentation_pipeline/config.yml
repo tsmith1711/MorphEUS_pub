@@ -3,7 +3,7 @@
 ################################################
 # MICROBEJ SEGMENTATION CONFIGURATION SETTINGS #
 ################################################
-# Contains all the configuration needed for running bcp_MicrobeJ_processing.m
+# Contains all the configuration needed for running MicrobeJ_segmentation.m
 # Save this file as config.yml and place in the root directory of the program
 
 metadata:

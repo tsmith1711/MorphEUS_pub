@@ -231,7 +231,7 @@ moa_table = sortrows(moa_table,'DRUG');
 %connectivity_plot(moa_table,color_struct,all_categories,chosen_colormap,wbg)
 %sgtitle({bayes_file,run_tot_string},'Interpreter','none')
 
-%% want to go through and make it into funky two way table time
+%% want to go through and make it into a two way table 
 
 % add a moa column
 results_table.MOA = results_table.DRUG;
@@ -268,11 +268,6 @@ two_way_table= make_two_way_table(results_table,'DRUG','NEIGHBOR');
 %title("drugs on bottom have the neighbors of drugs on left")
 
 %% want to create a table that adds together all of the connections 
-% would it be easier to start with the bayes struct or 1 way table? 
-% we'd need to add together first again before taking the percents... hm
-
-% could actually just get raw values back by multiplying and dividng by 100
-
 raw_two_way_table = two_way_table; 
 
 raw_two_way_table{:,:} = raw_two_way_table{:,:}/100*total_runs;

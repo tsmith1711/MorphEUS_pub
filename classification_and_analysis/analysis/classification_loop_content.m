@@ -521,7 +521,6 @@ backwards_select_analysis
 % from the overall vars --> just straight up look for highest percent
 % and if there is more than one, take lowest value
 
-% did I steal this from another section of code? what are you, a cop
 % get all of the fieldnames for overall vars 
 field_names = fieldnames(overall_vars);
 

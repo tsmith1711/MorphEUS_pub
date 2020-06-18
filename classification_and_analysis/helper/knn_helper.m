@@ -9,9 +9,6 @@
 % large_group - default to true
 % create_graph - default to false
 % create_cm -default to off 
-% would need knn_with_apply - maybe cut that? could make default to false
-% would need tit_add if random - could make default to false 
-% idk this seems like a lot of inputs I don't feel gr8 about it
 
 % outputs would be
 % pct_correct

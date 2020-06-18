@@ -109,41 +109,41 @@ end
 %% for Untreated, we can just put all of the untreated into one rep and call it a day
 % this is just a fix for that bayes stuff right now le'ts go
 if bayesian
-    unt_reps = fieldnames(split_tables.drug52_doseResponse.Untreated)';
+    unt_reps = fieldnames(split_tables.drug34_doseResponse.Untreated)';
 
     % add a new field for all reps
 
-    split_tables.drug52_doseResponse.Untreated.all_reps = struct;
+    split_tables.drug34_doseResponse.Untreated.all_reps = struct;
 
     % want to make this flexible later but now just need to get things going 
     for i = unt_reps
         rep=i{1};
-        unt3x = split_tables.drug52_doseResponse.Untreated.(rep).Untreated_3x;
-        unt025x = split_tables.drug52_doseResponse.Untreated.(rep).Untreated_025x;
+        unt3x = split_tables.drug34_doseResponse.Untreated.(rep).Untreated_3x;
+        unt025x = split_tables.drug34_doseResponse.Untreated.(rep).Untreated_025x;
 
         if strcmp(rep,"rep1")
-            split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_3x = unt3x;
-            split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_025x = unt025x;
+            split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_3x = unt3x;
+            split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_025x = unt025x;
         else
-            split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_3x = ...
-                vertcat(split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_3x, unt3x);
-            split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_025x = ...
-                vertcat(split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_025x, unt025x);
+            split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_3x = ...
+                vertcat(split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_3x, unt3x);
+            split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_025x = ...
+                vertcat(split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_025x, unt025x);
 
         end
-        split_tables.drug52_doseResponse.Untreated = ...
-            rmfield(split_tables.drug52_doseResponse.Untreated,rep);
+        split_tables.drug34_doseResponse.Untreated = ...
+            rmfield(split_tables.drug34_doseResponse.Untreated,rep);
     end 
 
     % go replace the rep column to all have the same thing so it works on next
     % step
 
-    maxlen = length(split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_025x.REP);
+    maxlen = length(split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_025x.REP);
 
     for i = 1:maxlen
-        split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_025x.REP(i) = ...
+        split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_025x.REP(i) = ...
             {'ALL'};
-        split_tables.drug52_doseResponse.Untreated.all_reps.Untreated_3x.REP(i) = ...
+        split_tables.drug34_doseResponse.Untreated.all_reps.Untreated_3x.REP(i) = ...
             {'ALL'};
 
 

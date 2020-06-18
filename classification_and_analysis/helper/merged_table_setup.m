@@ -5,7 +5,7 @@
 %
 % Called when using multiple workspaces in load_workspaces.m
 %
-% DESCRIPTION: - *NO NOT ANYMORE* Calls normalize_and_zero_mean() on final_data table. 
+% DESCRIPTION: -  
 %              - Initializes several variables which describe the data in
 %                the new normalized table. Many of these exist beforehand,
 %                we just need to make sure they reflect the concatenated

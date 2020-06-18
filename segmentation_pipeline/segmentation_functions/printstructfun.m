@@ -1,5 +1,5 @@
 function [outputArg1] = printstructfun(x,transverse_file)
-%function previously contained in bcp_MicrobeJ_processing with the addition
+%function previously contained in MicrobeJ_segmentation with the addition
 %of a timing function that gives the time taken to process each drug at
 %what is the longest section of the code 
 

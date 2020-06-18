@@ -5,7 +5,7 @@ function final_data_table = combine_workspaces(chosen_workspaces,workspace_direc
     % create a structure to store the final_data_table s from each workspace
     all_spaces = struct;
     for i = chosen_workspaces
-       % get each individual spacee
+       % get each individual space
        one_space = i{1};
        % need to get final data table from each space and concat final_data_table
        fpath = strcat(workspace_directory, '/', one_space);

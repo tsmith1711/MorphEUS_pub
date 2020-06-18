@@ -52,10 +52,6 @@ end
 % save the workspace used
 overall_vars.WORKSPACE = chosen_workspaces;
 
-% save whether efflux was in lipid or not
-overall_vars.EFFLUX_IN_LIPID = efflux_in_lipid;
-
-
 disp(strcat("distance metric is ", d_metric))
 
 if large_group

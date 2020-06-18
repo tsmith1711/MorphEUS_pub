@@ -14,8 +14,6 @@
 %       on final data table (default: true)
 %   - (OPTIONAL) remove_extra_controls - Will remove:
 %       EtOH, MeOH, NaOH, water (default: true)
-%   - (OPTIONAL) remove_bad_treated - Will remove:
-%       'IMI', 'Nal', 'Nig', 'Dau' (defualt: true)
 %
 %   - (OPTIONAL) workspace_directory - the directory where to look for
 %   workspaces (default: './workspaces')
@@ -33,16 +31,6 @@
 %       - conditions - true if multiple workspaces, false if only one
 %       - choice_extension - either 'DRUG' or 'DRUG_EXP' depending on var conditions
 %       - choice_variable - a list of either drugs or drug_exps depending on var conditions
-
-%% TODO
-% - Fix AfterTVN in this file and PCA_analysis
-% - Optimize workspace loading (only load final_data_table)
-
-%% Questions
-% - Is it necessary to normalize/zero-mean merged table if going to do so
-%   anyways after drug filtering?
-% - Why add applied drugs back in before tvn?
-% - Is it ok to normalize final_data_table beforehand?
 
 %% Generate defaults
 if ~exist('remove_INH_control', 'var')
